@@ -30,8 +30,10 @@ class File_Streamer
 }
 
 $ft = new File_Streamer();
-// $ft->setDestination('/usr/local/WowzaMediaServer-3.1.2/content/');
 $ft->setDestination('uploaded/');
+if($_SERVER['HTTP_HOST'] == 'ec2-23-22-104-252.compute-1.amazonaws.com'){
+  $ft->setDestination('/usr/local/WowzaMediaServer-3.1.2/content/');
+}
 
 if($ft->receive()){
   die(printf(IS_HTTPS_REQUEST ? MEDIA_HTTPS_PATH : MEDIA_HTTP_PATH, $ft->fileName));
