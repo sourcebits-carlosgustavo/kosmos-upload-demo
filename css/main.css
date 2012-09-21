@@ -1,0 +1,9 @@
+#formTarget {
+  display: none;
+}
+
+#output {
+  width: 500px;
+  height:170px;
+  overflow: auto;
+}
